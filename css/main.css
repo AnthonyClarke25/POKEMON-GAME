@@ -1,0 +1,489 @@
+/*font-family: 'Bangers', cursive;*/
+/*font-family: 'Cabin Sketch', cursive;*/
+/*font-family: 'Freckle Face', cursive;*/
+/*font-family: 'Press Start 2P', cursive;*/
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* SELECT SCREEN ============================================================*/
+.header {
+    background: #0a0618;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(#0a0618), to(#261c53));
+    background: linear-gradient(to bottom, #0a0618 0%, #261c53 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    position: fixed;
+    color: white;
+    font-size: 28px;
+    border-bottom: 2px solid #4B37A3;
+    width: 100%;
+    position: absolute;
+}
+
+.header .mode {
+    float: left;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.header .title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 32px;
+    padding: 15px;
+    text-align: center;
+}
+
+.select-screen {
+    position: relative;
+}
+
+.select-screen .main {
+    background: #76590b;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from(#76590b), color-stop(10%, #cf9c11), color-stop(23%, #ecb414), color-stop(35%, #fafa74), color-stop(50%, #fafafa), color-stop(65%, #fafa74), color-stop(77%, #ecb414), color-stop(90%, #cf9c11), to(#76590b));
+    background: linear-gradient(to right, #76590b 0%, #cf9c11 10%, #ecb414 23%, #fafa74 35%, #fafafa 50%, #fafa74 65%, #ecb414 77%, #cf9c11 90%, #76590b 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    width: 100%;
+    padding: 100px 50px;
+    overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.select-screen .main .title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.select-screen .main .character {
+    width: 200px;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    border: 3px solid #000;
+    float: left;
+    margin: 0 25px;
+    cursor: pointer;
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.select-screen .main .character.charmander {
+    background: #FA7A47;
+}
+
+.select-screen .main .character.bulbasaur {
+    background: #6BFA83;
+}
+
+.select-screen .main .character.squirtle {
+    background: #64B2FA;
+}
+
+.select-screen .main .character:hover {
+    background: purple;
+}
+
+/* BATTLE SCREEN ============================================================*/
+#battle-screen {
+    background: #1e5799;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #1e5799 0%, #2989d8 46%, #2989d8 46%, #e5e5e5 67%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 100% 100%;
+    width: 100%;
+    padding: 100px 50px;
+    overflow: auto;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+#battle-screen.active {
+    top: -100vh;
+}
+
+#battle-screen .fight-btn {
+    font-family: 'Bangers', cursive;
+    text-transform: capitalize;
+    font-size: 200px;
+    text-align: center;
+}
+
+#battle-screen .battle-btns {
+    text-align: center;
+    vertical-align: top;
+}
+
+#battle-screen .battle-btns .rock {
+    font-family: 'Press Start 2P', cursive;
+    background: #AD6101;
+    font-size: 10px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    border-top: 2px solid #DE7C01;
+    border-left: 2px solid #DE7C01;
+    border-right: 2px solid #DE7C01;
+    border-bottom: 5px solid #5E3500;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#battle-screen .battle-btns .rock img {
+    width: 75px;
+    height: 56px;
+    margin-bottom: 5px;
+}
+
+#battle-screen .battle-btns .paper {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    background: #AD6101;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    border-top: 2px solid #DE7C01;
+    border-left: 2px solid #DE7C01;
+    border-right: 2px solid #DE7C01;
+    border-bottom: 5px solid #5E3500;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#battle-screen .battle-btns .paper img {
+    width: 75px;
+    height: 56px;
+    margin-bottom: 5px;
+}
+
+#battle-screen .battle-btns .scissors {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    background: #AD6101;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    border-top: 2px solid #DE7C01;
+    border-left: 2px solid #DE7C01;
+    border-right: 2px solid #DE7C01;
+    border-bottom: 5px solid #5E3500;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#battle-screen .battle-btns .scissors img {
+    width: 75px;
+    height: 56px;
+    margin-bottom: 5px;
+}
+
+/* PLAYERS ============================================================*/
+#battle-screen .player {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+
+#battle-screen .player img {
+    height: 200px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -webkit-filter: FlipH;
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+/* player 1 ============================================================*/
+#battle-screen .player .player1 {
+    position: relative;
+}
+
+#battle-screen .player .player1 .stats {
+    position: absolute;
+    background: #F8F8D8;
+    top: -140px;
+    left: -70px;
+    height: 100px;
+    width: 300px;
+    border-radius: 5px;
+    border: 5px solid #506858;
+    padding: 15px;
+}
+
+#battle-screen .player .player1 .stats .name {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+#battle-screen .player .player1 .stats .level {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    float: right;
+}
+
+#battle-screen .player .player1 .stats .health {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    background: #506858;
+    border-radius: 5px;
+    padding: 5px;
+    color: #F8AE3E;
+    overflow: auto;
+    margin: 10px 0 0;
+}
+
+#battle-screen .player .player1 .stats .health .title {
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+#battle-screen .player .player1 .stats .health .health-bar {
+    background: #10120C;
+    border-radius: 5px;
+    width: 75%;
+    display: inline-block;
+    height: 16px;
+    float: left;
+}
+
+#battle-screen .player .player1 .stats .health .health-bar .inside {
+    background: #70F8A8;
+    border-radius: 5px;
+    display: inline-block;
+    height: 16px;
+    float: left;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+#battle-screen .player .player1 .stats .health .health-bar {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+}
+
+/* CPU ============================================================*/
+#battle-screen .cpu {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+}
+
+#battle-screen .cpu .player2 {
+    position: relative;
+}
+
+#battle-screen .cpu .player2 .stats {
+    position: absolute;
+    background: #F8F8D8;
+    top: -140px;
+    left: -70px;
+    height: 100px;
+    width: 300px;
+    border-radius: 5px;
+    border: 5px solid #506858;
+    padding: 15px;
+}
+
+#battle-screen .cpu .player2 .stats .name {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+#battle-screen .cpu .player2 .stats .level {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    float: right;
+}
+
+#battle-screen .cpu .player2 .stats .health {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    background: #506858;
+    border-radius: 5px;
+    padding: 5px;
+    color: #F8AE3E;
+    overflow: auto;
+    margin: 10px 0 0;
+}
+
+#battle-screen .cpu .player2 .stats .health .title {
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+#battle-screen .cpu .player2 .stats .health .health-bar {
+    background: #10120C;
+    border-radius: 5px;
+    width: 75%;
+    display: inline-block;
+    height: 16px;
+    float: left;
+}
+
+#battle-screen .cpu .player2 .stats .health .health-bar .inside {
+    background: #70F8A8;
+    border-radius: 5px;
+    display: inline-block;
+    height: 16px;
+    float: left;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+#battle-screen .cpu .player1 .stats .health .health-bar {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+}
+
+#battle-screen .cpu img {
+    height: 200px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    /* Stay in place */
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 448px;
+    top: 214px;
+    width: 50%;
+    /* Full width */
+    height: 50%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background: #e1ffff;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 791px;
+    height: 190px;
+}
+
+.modal-content #winning-message {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18;
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-content .retry {
+    -webkit-box-shadow: 0px 0px 8px 3px #3dc21b;
+    box-shadow: 0px 0px 8px 3px #3dc21b;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #44c767), to(#44523d));
+    background: linear-gradient(to bottom, #44c767 5%, #44523d 100%);
+    background-color: #44c767;
+    border-radius: 28px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Times New Roman;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 20px 50px;
+    text-decoration: none;
+    text-shadow: 0px 1px 11px #2f6627;
+    margin: 0 283px 30px;
+    position: relative;
+}
+
+.modal-content .retry:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #44523d), to(#44c767));
+    background: linear-gradient(to bottom, #44523d 5%, #44c767 100%);
+    background-color: #44523d;
+}
+
+.modal-content .retry:active {
+    position: relative;
+    top: 1px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */
