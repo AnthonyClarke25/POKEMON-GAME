@@ -34,7 +34,8 @@ var gameState = {
         battleScreenEl: document.getElementById('battle-screen'),
         attackBtnsEl: document.getElementById('battle-screen').querySelectorAll('.attack'),
         selectsSreenEl: document.querySelector('select-screen'),
-        winnerModalEL: document.getElementById("winnerModal")
+        winnerModalEL: document.getElementById('winnerModal'),
+        battleMessageEl: document.querySelector('battle-message')
 
     },
     init: function () {
@@ -49,7 +50,8 @@ var gameState = {
                 var player2Img = document.querySelector('.player2').getElementsByTagName('img')
                 var player1Name = document.querySelector('.player1 .stats .name')
                 var player2Name = document.querySelector('.player2 .stats .name')
-
+                var userCurrentHP = document.querySelector('.player1 .stats .health .current-number')
+                var cpuCurrentHP = document.querySelector('.player2 .stats .health .current-number')
 
 
                 // we save the current pokemon
@@ -78,11 +80,13 @@ var gameState = {
                 player2Img[0].src = gameState.currentRivalPokemon[0].img
                 player1Name.innerHTML = gameState.currentPokemon[0].name
                 player2Name.innerHTML = gameState.currentRivalPokemon[0].name
-
                 gameState.currentPokemon[0].health = gameState.calculateIntialHealth(gameState.currentPokemon)
                 gameState.currentPokemon[0].originalhealth = gameState.calculateIntialHealth(gameState.currentPokemon)
                 gameState.currentRivalPokemon[0].health = gameState.calculateIntialHealth(gameState.currentRivalPokemon)
                 gameState.currentRivalPokemon[0].originalhealth = gameState.calculateIntialHealth(gameState.currentRivalPokemon)
+
+                cpuCurrentHP.innerHTML = gameState.currentRivalPokemon[0].originalhealth.toFixed(0)
+                userCurrentHP.innerHTML = gameState.currentPokemon[0].originalhealth.toFixed(0)
 
             }
             i++
@@ -93,7 +97,8 @@ var gameState = {
             gameState.elements.attackBtnsEl[a].onclick = function () {
                 var attackName = this.dataset.attack
                 gameState.currentUserAttack = attackName
-                gameState.play(gameState.currentUserAttack, gameState.cpuAttack())
+                gameState.currentRivalAttack = gameState.cpuAttack()
+                gameState.play(gameState.currentUserAttack, gameState.currentRivalAttack)
             }
             a++
         }
@@ -111,24 +116,32 @@ var gameState = {
 
     attackMove: function (attack, level, stack, critical, enemy, attacker) {
         console.log('Enemy ' + enemy.name + ' before: ' + enemy.health)
-        var attackAmount = (attack * level) * ((stack + critical))
+        var attackAmount = ((attack * level) * ((stack + critical))).toFixed(0)
         enemy.health = enemy.health - attackAmount
 
         var userHP = document.querySelector('.player1').querySelector('.stats').querySelector('.health').querySelector('.health-bar').querySelector('.inside');
         var cpuHP = document.querySelector('.player2').querySelector('.stats').querySelector('.health').querySelector('.health-bar').querySelector('.inside');
+        var userCurrentHP = document.querySelector('.player1 .stats .health .current-number')
+        var cpuCurrentHP = document.querySelector('.player2 .stats .health .current-number')
+        var player1battlemessage = document.querySelector('.battle-message .player1')
+        var player2battlemessage = document.querySelector('.battle-message .player2')
+        var minusPercent
+
         if (enemy.owner == 'user') {
-            var minusPercent = ((enemy.health * 100) / enemy.originalhealth);
-            console.log('minus percent is ' + minusPercent)
+            minusPercent = ((enemy.health * 100) / enemy.originalhealth).toFixed(0);
             userHP.style.width = ((minusPercent < 0) ? 0 : minusPercent) + '%'
-            console.log(userHP)
+            userCurrentHP.innerHTML = ((enemy.health < 0) ? 0 : enemy.health.toFixed(0));
+            player2battlemessage.innerHTML = "The CPU's " + attacker.name + " has done " + attackAmount + " damage with its " + gameState.currentRivalAttack + " attack";
+
         } else {
-            var minusPercent = ((enemy.health * 100) / enemy.originalhealth);
-            console.log('minus percent is ' + minusPercent)
-            cpuHP.style.width = ((minusPercent < 0) ? 0 : minusPercent) + '%'
-            console.log(cpuHP)
+            minusPercent = ((enemy.health * 100) / enemy.originalhealth).toFixed(0);
+            cpuHP.style.width = ((minusPercent < 0) ? 0 : minusPercent) + '%';
+            cpuCurrentHP.innerHTML = ((enemy.health < 0) ? 0 : enemy.health.toFixed(0));
+            player1battlemessage.innerHTML = "your " + attacker.name + " has done " + attackAmount + " damage with its " + gameState.currentUserAttack + " attack";
+
         }
         gameState.checkWinner(enemy, attacker)
-        console.log(enemy.name + ' after: ' + enemy.health)
+
     },
 
     checkWinner: function (enemy, attacker) {
@@ -136,7 +149,6 @@ var gameState = {
 
 
             var span = document.getElementsByClassName("close")[0];
-
 
             gameState.elements.winnerModalEL.style.display = "block";
 
@@ -153,8 +165,6 @@ var gameState = {
             span.onclick = function () {
                 gameState.elements.winnerModalEL.style.display = "none";
             }
-            console.log(winning)
-            console.log(gameState.elements.winnerModalEL)
 
         }
     },
@@ -177,7 +187,9 @@ var gameState = {
         currentPokemon.owner = 'user'
         currentRivalPokemon.owner = 'cpu'
         switch (userattack) {
+
             case 'rock':
+
                 if (cpuAttack == 'paper') {
                     if (currentPokemon.health >= 1 && currentRivalPokemon.health >= 1) {
 

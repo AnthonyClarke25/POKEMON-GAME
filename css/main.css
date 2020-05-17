@@ -399,6 +399,26 @@ body {
     height: 200px;
 }
 
+
+#battle-screen .battle-message {
+    position: absolute;
+    background: #F8F8D8;
+    top: 433px;
+    left: 789px;
+    height: 149px;
+    width: 352px;
+    border-radius: 5px;
+    border: 5px solid #506858;
+    padding: 15px;
+    font-family: 'Press Start 2P',
+        cursive;
+    font-size: 12px;
+}
+
+
+
+
+
 /* The Modal (background) */
 .modal {
     display: none;
