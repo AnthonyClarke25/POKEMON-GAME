@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyClarke25/POKEMON-GAME.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyClarke25/POKEMON-GAME/issues"
+  },
+  "homepage": "https://github.com/AnthonyClarke25/POKEMON-GAME#readme"
+}
