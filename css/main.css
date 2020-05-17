@@ -568,47 +568,48 @@ body {
         width: 209px;
 
     }
+
+
+    #battle-screen .cpu img {
+        height: 141px;
+        width: 125px;
+        position: relative;
+        left: 59px;
+
+    }
+
+
+    #battle-screen .battle-message {
+        display: none;
+    }
+
+    .modal {
+        display: none;
+        position: relative;
+        /* padding-top: 100px; */
+        left: -25px;
+        top: -1167px;
+        width: 101%;
+        height: 50%;
+        overflow: auto;
+    }
+
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 81%;
+        height: 262px;
+        left: 32px;
+    }
+
+    .modal-content .retry {
+        position: relative;
+        left: -204px;
+    }
+
 }
-
-#battle-screen .cpu img {
-    height: 141px;
-    width: 125px;
-    position: relative;
-    left: 59px;
-}
-
-
-#battle-screen .battle-message {
-    display: none;
-}
-
-.modal {
-    display: none;
-    position: relative;
-    /* padding-top: 100px; */
-    left: -25px;
-    top: -1167px;
-    width: 101%;
-    height: 50%;
-    overflow: auto;
-}
-
-.modal-content {
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 81%;
-    height: 262px;
-    left: 32px;
-}
-
-
-.modal-content .retry {
-    position: relative;
-    left: -204px;
-}
-
 
 
 
