@@ -137,7 +137,7 @@ var gameState = {
             minusPercent = ((enemy.health * 100) / enemy.originalhealth).toFixed(0);
             cpuHP.style.width = ((minusPercent < 0) ? 0 : minusPercent) + '%';
             cpuCurrentHP.innerHTML = ((enemy.health < 0) ? 0 : enemy.health.toFixed(0));
-            player1battlemessage.innerHTML = "your " + attacker.name + " has done " + attackAmount + " damage with its " + gameState.currentUserAttack + " attack";
+            player1battlemessage.innerHTML = "Your " + attacker.name + " has done " + attackAmount + " damage with its " + gameState.currentUserAttack + " attack";
 
         }
         gameState.checkWinner(enemy, attacker)
