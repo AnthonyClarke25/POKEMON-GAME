@@ -123,12 +123,14 @@ body {
 
 /* BATTLE SCREEN ============================================================*/
 #battle-screen {
-    background: #1e5799;
+    /*  background: #1e5799;
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #1e5799 0%, #2989d8 46%, #2989d8 46%, #e5e5e5 67%);
+    /* background: linear-gradient(45deg, #1e5799 0%, #2989d8 46%, #2989d8 46%, #e5e5e5 67%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d881rst-67b0388f-4616-4464-a57c-5ea720f36b36.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMmZiMjgyMWEtMTQwNi00YTFkLTliMDQtNjY2OGYyNzhlOTQ0XC9kODgxcnN0LTY3YjAzODhmLTQ2MTYtNDQ2NC1hNTdjLTVlYTcyMGYzNmIzNi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ._5aa1tEo_3gogebYmkUVIzNfAJjNEOvZGTGdbYwjyEA');
     background-size: 100% 100%;
     width: 100%;
     padding: 100px 50px;

@@ -139,7 +139,13 @@ var gameState = {
 
 
             gameState.elements.winnerModalEL.style.display = "block";
-            var winning = "The winner of the battle is " + attacker.name + " the " + enemy.name + " lost. Better luck next time!"
+
+            var winning
+            if (attacker.owner == 'user') {
+                winning = "Congratulations your " + attacker.name + " has won the battle!"
+            } else {
+                winning = "Better luck next time, the CPU's  " + attacker.name + " has won the battle!"
+            }
 
             document.getElementById("winning-message").innerText = winning
 
