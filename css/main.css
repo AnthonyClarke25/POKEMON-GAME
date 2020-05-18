@@ -11,6 +11,7 @@ body {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 /* SELECT SCREEN ============================================================*/
@@ -441,15 +442,19 @@ body {
 /* Modal Content */
 .modal-content {
     position: relative;
-    background: #e1ffff;
+    background: #F8F8D8;
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%);
+
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
+    border-radius: 5px;
+    border: 5px solid #506858;
+    padding: 15px;
+    font-family: 'Press Start 2P',
+        cursive;
+    font-size: 12px;
     width: 791px;
     height: 190px;
 }
@@ -508,7 +513,143 @@ body {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 1023px) {
+
+    #battle-screen .battle-message {
+        position: relative;
+        background: #F8F8D8;
+        top: 196px;
+        left: 170px;
+        height: 149px;
+        width: 352px;
+        border-radius: 5px;
+        border: 5px solid #506858;
+        padding: 15px;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 12px;
+        transform: scale(1.3);
+    }
+
+    #battle-screen .battle-btns {
+        text-align: center;
+        vertical-align: top;
+        transform: scale(1.5);
+    }
+
+    #battle-screen .player .player1 .stats {
+        top: -167px;
+        left: -132px;
+        height: 100px;
+        width: 149%;
+        position: relative;
+    }
+
+    #battle-screen .cpu .player2 .stats {
+        position: relative;
+        background: #F8F8D8;
+        top: -168px;
+        left: 135px;
+        height: 100px;
+        width: 300px;
+        border-radius: 5px;
+        border: 5px solid #506858;
+        padding: 15px;
+    }
+
+    #battle-screen .player img {
+        height: 200px;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        position: relative;
+        -webkit-filter: FlipH;
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        left: -137px;
+    }
+
+    #battle-screen .cpu img {
+        height: 200px;
+        position: relative;
+        left: 283px;
+    }
+
+    .modal {
+        display: none;
+        position: absolute;
+        padding-top: 100px;
+        left: -12px;
+        top: -1714px;
+        width: 100%;
+        /* overflow: auto; */
+        TRANSFORM: SCALE(0.95);
+        POSITION: relative;
+    }
+
+    .modal-content {
+        position: relative;
+        background: #F8F8D8;
+        margin: auto;
+        border-radius: 5px;
+        border: 5px solid #506858;
+        padding: 15px;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 19px;
+        width: 791px;
+        height: 190px;
+    }
+
+    .modal-content .retry {
+        -webkit-box-shadow: 0px 0px 8px 3px #3dc21b;
+        box-shadow: 0px 0px 8px 3px #3dc21b;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #44c767), to(#44523d));
+        background: linear-gradient(to bottom, #44c767 5%, #44523d 100%);
+        background-color: #44c767;
+        border-radius: 28px;
+        border: 1px solid #18ab29;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Times New Roman;
+        font-size: 23px;
+        font-weight: bold;
+        padding: 20px 50px;
+        text-decoration: none;
+        text-shadow: 0px 1px 11px #2f6627;
+        margin: 0 283px 30px;
+        position: relative;
+        TOP: -21PX;
+    }
+
+    .select-screen .main .character {
+        width: 200px;
+        height: 200px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: relative;
+        border: 3px solid #000;
+        float: left;
+        margin: 0 25px;
+        cursor: pointer;
+        -webkit-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+        transform: scale(1.2);
+    }
+
+
+
+}
+
+
+/*plus sized phones */
+@media only screen and (max-width: 767px) {
 
     .header .title {
 
@@ -611,11 +752,213 @@ body {
 
 }
 
+/*iphone 6/7/8*/
+@media only screen and (max-width: 415px) {
+
+    .modal {
+        display: none;
+        position: relative;
+        /* padding-top: 100px; */
+        left: -25px;
+        top: -1354px;
+        width: 101%;
+        height: 50%;
+        overflow: auto;
+    }
 
 
-@media only screen and (max-width: 1023px) {
-    body {
-        background-color: lightblue;
+
+}
+
+/*pixel 2 xl*/
+@media only screen and (max-width: 412px) {
+    .modal {
+        display: none;
+        position: relative;
+        /* padding-top: 100px; */
+        left: -25px;
+        top: -1446px;
+        width: 101%;
+        height: 50%;
+        overflow: auto;
+    }
+
+
+}
+
+
+/* iPhone 6/7/8 */
+@media only screen and (max-width: 376px) {
+    #battle-screen .fight-btn {
+        font-family: 'Bangers', cursive;
+        text-transform: capitalize;
+        font-size: 200px;
+        text-align: center;
+        position: relative;
+        top: -80px;
+    }
+
+    #battle-screen .battle-btns {
+        width: 121%;
+        position: relative;
+        top: -76px;
+        left: -26px;
+    }
+
+    #battle-screen .player .player1 .stats {
+        top: -19px;
+        left: -100px;
+        height: 100px;
+        width: 114%;
+        transform: scale(0.7);
+        position: relative;
+    }
+
+
+
+    #battle-screen .cpu .player2 .stats {
+        top: -18px;
+        left: 46px;
+        height: 100px;
+        width: 133%;
+        transform: scale(0.7);
+        position: relative;
+    }
+
+    #battle-screen .cpu img {
+        height: 141px;
+        width: 125px;
+        position: relative;
+        left: 105px;
+    }
+
+    .modal {
+        display: none;
+        position: relative;
+        /* padding-top: 100px; */
+        left: -25px;
+        top: -1223px;
+        width: 101%;
+        height: 50%;
+        overflow: auto;
+    }
+
+    .modal-content .retry {
+        position: relative;
+        left: -227px;
+    }
+
+
+
+}
+
+
+
+/* Moto G4 */
+@media only screen and (max-width: 360px) {
+
+
+    #battle-screen .fight-btn {
+
+        position: relative;
+        top: -139px;
+    }
+
+    #battle-screen .battle-btns {
+
+        top: -162px;
+        left: -31px;
+        position: relative;
+        width: 125%;
+
+    }
+
+    #battle-screen .player .player1 .stats {
+        top: -172px;
+        left: -83px;
+        height: 100px;
+        width: 149%;
+    }
+
+    #battle-screen .cpu .player2 .stats {
+        top: -171px;
+        left: 13px;
+        height: 100px;
+        width: 185px;
+    }
+
+    .modal-content .retry {
+        position: relative;
+        left: -234px;
+    }
+
+}
+
+/* iPhone 5/SE*/
+@media only screen and (max-width: 321px) {
+    .select-screen .main .character.charmander {
+        background: #FA7A47;
+        position: relative;
+        width: 107px;
+        padding: 0;
+        margin: 0 0px 0px 31px;
+    }
+
+    .select-screen .main .character.bulbasaur {
+        background: #6BFA83;
+        position: relative;
+        margin: 0 0 0 4px;
+        width: 100px;
+    }
+
+    .select-screen .main .character.squirtle {
+        background: #64B2FA;
+        position: relative;
+        margin: 0 24px 0 2px;
+        height: 181px;
+        width: 92px;
+    }
+
+    #battle-screen .fight-btn img {
+        width: 100%;
+        position: relative;
+        top: -29px;
+    }
+
+    #battle-screen .battle-btns {
+        top: -196px;
+        left: -44px;
+        position: relative;
+        width: 141%;
+    }
+
+
+    #battle-screen .player .player1 .stats {
+        top: -132px;
+        left: -96px;
+        height: 100px;
+        width: 172%;
+        transform: scale(0.7);
+    }
+
+    #battle-screen .cpu .player2 .stats {
+        top: -132px;
+        left: 1px;
+        height: 100px;
+        width: 172%;
+        transform: scale(0.7);
+    }
+
+    .modal {
+        display: none;
+        position: relative;
+        /* padding-top: 100px; */
+        left: -25px;
+        top: -1054px;
+        width: 101%;
+        height: 60%;
+        transform: scale(0.7);
+        overflow: auto;
     }
 
 }
