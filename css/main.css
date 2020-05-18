@@ -647,6 +647,49 @@ body {
 
 }
 
+@media only screen and (max-width: 1025px) {
+
+    #battle-screen .battle-message {
+        position: relative;
+        background: #F8F8D8;
+        top: 159px;
+        left: 321px;
+        height: 149px;
+        width: 352px;
+        border-radius: 5px;
+        border: 5px solid #506858;
+        padding: 15px;
+        font-family: 'Press Start 2P',
+            cursive;
+        font-size: 12px;
+        transform: scale(1.5);
+    }
+
+    .modal {
+        display: none;
+        position: relative;
+        padding-top: 100px;
+        left: -2px;
+        top: -2249px;
+        width: 100%;
+        height: 50%;
+        overflow: auto;
+        transform: scale(1.2);
+    }
+
+    #battle-screen .battle-btns {
+        text-align: center;
+        vertical-align: top;
+        transform: scale(2);
+        top: 55px;
+        position: relative;
+    }
+
+
+
+
+}
+
 
 /*plus sized phones */
 @media only screen and (max-width: 767px) {
@@ -766,7 +809,31 @@ body {
         overflow: auto;
     }
 
+    .select-screen .main .character {
+        height: 179px;
+        margin: 0 15px;
+    }
 
+    #battle-screen .player .player1 .stats {
+        top: 9px;
+        left: -112px;
+        height: 100px;
+        width: 118%;
+        transform: scale(0.7);
+    }
+
+    #battle-screen .cpu .player2 .stats {
+        top: 11px;
+        left: 41px;
+        height: 100px;
+        width: 140%;
+        transform: scale(0.7);
+    }
+
+    #battle-screen .battle-btns {
+        width: 100%;
+        transform: scale(0.9);
+    }
 
 }
 
@@ -783,12 +850,54 @@ body {
         overflow: auto;
     }
 
+    .select-screen .main .character {
+        height: 179px;
+        margin: 0 14px;
+    }
+
+    #battle-screen .battle-btns {
+        width: 100%;
+        transform: scale(.99999);
+    }
+
+    #battle-screen .player .player1 .stats {
+        top: -65px;
+        left: -83px;
+        height: 100px;
+        width: 103%;
+    }
+
+
+
+    #battle-screen .cpu .player2 .stats {
+        top: -64px;
+        left: 81px;
+        height: 99px;
+        width: 209px;
+    }
+
+    #battle-screen .cpu img {
+        height: 141px;
+        width: 125px;
+        position: relative;
+        left: 152px;
+    }
+
+
+
 
 }
 
 
 /* iPhone 6/7/8 */
 @media only screen and (max-width: 376px) {
+
+    .select-screen .main .character {
+        height: 179px;
+        margin: 0 7px;
+        transform: scale(0.95);
+    }
+
     #battle-screen .fight-btn {
         font-family: 'Bangers', cursive;
         text-transform: capitalize;
@@ -839,7 +948,7 @@ body {
         left: -25px;
         top: -1223px;
         width: 101%;
-        height: 50%;
+        height: 58%;
         overflow: auto;
     }
 
@@ -855,8 +964,13 @@ body {
 
 
 /* Moto G4 */
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 361px) {
 
+    .select-screen .main .character {
+        height: 179px;
+        margin: 0 4px;
+        transform: scale(0.9);
+    }
 
     #battle-screen .fight-btn {
 
@@ -874,17 +988,28 @@ body {
     }
 
     #battle-screen .player .player1 .stats {
-        top: -172px;
+        top: -55px;
         left: -83px;
         height: 100px;
-        width: 149%;
+        width: 103%;
     }
 
     #battle-screen .cpu .player2 .stats {
-        top: -171px;
-        left: 13px;
+        top: -53px;
+        left: 87px;
         height: 100px;
-        width: 185px;
+        width: 103%;
+    }
+
+    .modal {
+        display: none;
+        position: relative;
+        padding-top: 100px;
+        left: -50px;
+        top: -1223px;
+        width: 113%;
+        height: 66%;
+        overflow: auto;
     }
 
     .modal-content .retry {
@@ -934,18 +1059,18 @@ body {
 
 
     #battle-screen .player .player1 .stats {
-        top: -132px;
-        left: -96px;
+        top: -21px;
+        left: -88px;
         height: 100px;
-        width: 172%;
+        width: 108%;
         transform: scale(0.7);
     }
 
     #battle-screen .cpu .player2 .stats {
-        top: -132px;
-        left: 1px;
+        top: -19px;
+        left: 35px;
         height: 100px;
-        width: 172%;
+        width: 136%;
         transform: scale(0.7);
     }
 
@@ -953,10 +1078,10 @@ body {
         display: none;
         position: relative;
         /* padding-top: 100px; */
-        left: -25px;
-        top: -1054px;
-        width: 101%;
-        height: 60%;
+        left: -56px;
+        top: -1157px;
+        width: 122%;
+        height: 68%;
         transform: scale(0.7);
         overflow: auto;
     }
